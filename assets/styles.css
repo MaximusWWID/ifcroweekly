@@ -1,0 +1,97 @@
+/* Pengaturan Umum */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f4f7f6;
+}
+
+/* Header & Navigasi */
+h1 {
+    color: #2c3e50;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.nav-table {
+    width: 100%;
+    background-color: #2c3e50;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border: none;
+}
+
+.nav-table td {
+    padding: 10px;
+    text-align: center;
+}
+
+.nav-table a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-table a:hover {
+    color: #18bc9c;
+}
+
+/* Bagian Sambutan */
+.kaprodi-container {
+    display: flex;
+    gap: 20px;
+    background: rgb(30, 206, 180);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    align-items: flex-start;
+}
+
+.profile-img {
+    border-radius: 8px;
+    border: 3px solid #1a0202;
+    object-fit: cover;
+}
+
+.bio p {
+    margin: 5px 0;
+}
+
+/* Bagian Prestasi */
+h2 {
+    color: #2c3e50;
+    border-left: 5px solid #18bc9c;
+    padding-left: 10px;
+    margin-top: 30px;
+}
+
+.main-list {
+    background: white;
+    padding: 20px 40px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* Footer Links */
+.footer-links {
+    margin-top: 30px;
+    text-align: center;
+    padding: 20px;
+}
+
+.footer-links a {
+    margin: 0 10px;
+    padding: 8px 15px;
+    background-color: #18bc9c;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.footer-links a:hover {
+    background-color: #128f76;
+}
