@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE php>
+<php>
     <head>
         <meta charset="UTF-8">
         <title>Tambah Data</title>
@@ -7,7 +7,7 @@
     </head>
     <body>
         <h2>Tambah Data Mahasiswa
-            <form action="mahasiswa.html" method="post">
+            <form action="mahasiswa.php" method="post">
                 <table cellpadding="3">
                     <tr>
                         <td><label for="nama">Nama</label></td>
@@ -136,4 +136,4 @@
                 <td colspan="3"><button type="submit" name="submit">Tambah</button></td>
                  </table cellpadding="3">
     </body>
-</html>
+</php>
