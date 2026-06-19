@@ -19,20 +19,22 @@ function tambahdata($data, $files) {
     $email      = htmlspecialchars($data["email"]);
     $no_hp      = htmlspecialchars($data["no_hp"]);
 
-    $namafoto   = $files["name"];
-    $tmpfoto    = $files["tmp_name"];
-    
+    $namafoto    = $files["name"];
+    $tmpfoto     = $files["tmp_name"];
+
+    // Buat nama file unik agar tidak bentrok dengan file lain
     $newnamefoto = uniqid() . "_" . $namafoto;
-    $path       = "assets/$namafoto";
+    // Gunakan $newnamefoto (bukan $namafoto) sebagai nama file tujuan
+    $path        = "assets/" . $newnamefoto;
 
-    if (move_uploaded_file($tmpfoto, $path));
-    {
-
-    $query = "INSERT INTO mahasiswa (nama, nim, jurusan, email, no_hp, foto) VALUES 
-    ('$nama', '$nim', '$jurusan', '$email', '$no_hp', '$newnamefoto')";
-    mysqli_query($koneksi, $query);
-    return mysqli_affected_rows($koneksi);
+    // Hapus semicolon setelah if agar blok hanya jalan jika upload berhasil
+    if (move_uploaded_file($tmpfoto, $path)) {
+        $query = "INSERT INTO mahasiswa (nama, nim, jurusan, email, no_hp, foto) VALUES 
+        ('$nama', '$nim', '$jurusan', '$email', '$no_hp', '$newnamefoto')";
+        mysqli_query($koneksi, $query);
+        return mysqli_affected_rows($koneksi);
     }
+    return 0;
 }
 
 function hapusdata($id)
