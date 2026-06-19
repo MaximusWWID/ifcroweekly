@@ -50,9 +50,9 @@ $mahasiswas = tampildata($qmhs);
                 echo "<td>" . $mhs['jurusan'] . "</td>";
                 echo "<td>" . $mhs['email'] . "</td>";
                 echo "<td>" . $mhs['no_hp'] . "</td>";
-                echo "<td><img src='asset/img/" . $mhs['foto'] . "' alt='Foto " . $mhs['nama'] . "' width='60px'/></td>";
+                echo "<td><img src='assets/" . $mhs['foto'] . "' alt='Foto " . $mhs['nama'] . "' width='60px'/></td>";
                 echo "<td>
-                        <a href='editdata.php?id=" . $mhs['id'] . "'><button>Edit</button></a> |
+                        <a href='ubahdata.php?id=" . $mhs['id'] . "'><button>Edit</button></a> |
                         <a href='hapusdata.php?id=" . $mhs['id'] . "' onclick=\"return confirm('Apakah Anda yakin ingin menghapus data ini?')\"><button>Hapus</button></a>
                       </td>";
                 echo "</tr>";
