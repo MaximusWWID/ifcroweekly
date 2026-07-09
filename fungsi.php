@@ -107,7 +107,7 @@ function login($data) {
     if ($result && mysqli_num_rows($result) === 1) {
         $user = mysqli_fetch_assoc($result);
 
-        if (password_verify($password_input, $user["PASSWORD"])) {
+        if (password_verify($password_input, $user["password"])) {
             return $user;
         }
     }

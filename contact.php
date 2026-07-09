@@ -1,5 +1,6 @@
 <?php
 session_start();
+require "cek_login.php";
 ?>
 <!DOCTYPE php>
 <php>
