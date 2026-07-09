@@ -69,4 +69,49 @@ function ubahdata($data, $id) {
     mysqli_query($koneksi, $query);
     return mysqli_affected_rows($koneksi);
 }
+
+function register($data) {
+    global $koneksi;
+    $username = stripslashes($data["username"]);
+    $password1 = mysqli_real_escape_string($koneksi, $data["password"]);
+    $confirm_password = mysqli_real_escape_string($koneksi, $data["confirm_password"]);
+
+    if ($password1 !== $confirm_password) {
+        echo "<script>
+                alert('Password dan konfirmasi password tidak cocok!');
+              </script>";
+        return false;
+    }
+
+    //encrypt password
+    $password_hash = password_hash($password1, PASSWORD_DEFAULT);
+
+    $query = "INSERT INTO user (username, password) VALUES ('$username', '$password_hash')";
+    mysqli_query($koneksi, $query);
+    return mysqli_affected_rows($koneksi);
+}
+// fungsi login
+function login($data) {
+    global $koneksi;
+
+    if (!isset($data["username"]) || !isset($data["password"]) || $data["password"] === "") {
+        return false;
+    }
+
+    $username = mysqli_real_escape_string($koneksi, $data["username"]);
+    $password_input = $data["password"];
+
+    $query = "SELECT * FROM user WHERE username = '$username'";
+    $result = mysqli_query($koneksi, $query);
+
+    if ($result && mysqli_num_rows($result) === 1) {
+        $user = mysqli_fetch_assoc($result);
+
+        if (password_verify($password_input, $user["PASSWORD"])) {
+            return $user;
+        }
+    }
+
+    return false;
+}
 ?>

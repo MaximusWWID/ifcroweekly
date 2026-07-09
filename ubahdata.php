@@ -1,5 +1,6 @@
 <?php
 require "fungsi.php";
+require "cek_login.php";
 
 $id = $_GET['id'];
 $query = "SELECT * FROM mahasiswa WHERE id=$id";

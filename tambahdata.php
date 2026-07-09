@@ -1,5 +1,6 @@
 <?php
 require "fungsi.php";
+require "cek_login.php";
 if (isset($_POST["submit"])) {
     if(tambahdata($_POST, $_FILES["foto"]) > 0){
 
